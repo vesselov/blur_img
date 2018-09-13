@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{margin: 20px;}
+        img{margin: 20px;}
+    </style>
+    <script>
+        window.onload = init;
+        function init(){
+            var images = document.getElementsByTagName("img");
+                for (var i = 0; i < images.length; i++){
+                    images[i].onclick = showAnswer;
+                }
+        }
+        function showAnswer(eventObj){
+            var image = eventObj.target;
+            var name = image.id;
+            name = name + ".jpg";
+            image.src = name;
+            console.log(name);
+
+    
+        }
+    </script>
+    <img id="zero" src="zeroblur.jpg"  alt="">
+    <img id="two" src="twoblur.jpg"  alt="">
+    <img id="three" src="three.jpg"  alt="">
+    <img id="four"  src="fourblur.jpg" alt="">
+    <img id ="five" src="fiveblur.jpg"  alt="">
+</body>
+</html>
