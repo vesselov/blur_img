@@ -10,6 +10,13 @@
     <style>
         body{margin: 20px;}
         img{margin: 20px;}
+    #container{
+        display: flex;
+    }
+    img{
+        
+        height: 200px;
+    }
     </style>
     <script>
         window.onload = init;
@@ -24,15 +31,21 @@
             var name = image.id;//show image id
             name = name + ".jpg"; // add to id prefix jpg
             image.src = name; // 
-            console.log(name);
-
-    
+            setTimeout(reblur, 2000, image);
         }
+        function reblur(image){
+            var name = image.id;
+            name = name + "blur.jpg"; // add to id prefix jpg
+            image.src = name; 
+        }   
+
     </script>
+    <div id="container">
     <img id="zero" src="zeroblur.jpg"  alt="">
     <img id="two" src="twoblur.jpg"  alt="">
     <img id="three" src="three.jpg"  alt="">
     <img id="four"  src="fourblur.jpg" alt="">
     <img id ="five" src="fiveblur.jpg"  alt="">
+    </div>
 </body>
 </html>
